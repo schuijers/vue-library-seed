@@ -1,4 +1,4 @@
-import Greeting from './components/greeting/Greeting.vue';
+const Greeting = require('./components/greeting/index.vue');
 
 export const components = {
   Greeting

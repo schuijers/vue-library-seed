@@ -1,5 +1,6 @@
-import Vue from 'vue';
-import App from './App.vue';
+import * as Vue from 'vue';
+
+const App = require('./app.component.vue');
 
 new Vue({
   el: 'app',

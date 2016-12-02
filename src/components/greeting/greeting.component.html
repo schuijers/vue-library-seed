@@ -1,0 +1,14 @@
+<section>
+  <h2>Hello from the Greeting component!</h2>
+  <p>
+    This paragraph has scoped styles.
+  </p>
+  <p>
+    What's your name?
+    <input type="text" v-model="name">
+  </p>
+  <ul v-if="name">
+    <li>{{englishGreeting}}</li>
+    <li>{{spanishGreeting}}</li>
+  </ul>
+</section>

@@ -1,14 +1,15 @@
-const config = require('./webpack.common.js');
+const commonConfig = require('./webpack.common.js');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = webpackMerge(config, {
+module.exports = webpackMerge(commonConfig, {
   bail: true,
   devtool: 'source-map',
   entry: {
-    app: './demo-app/app/index.js',
+    app: './demo-app/app/index.ts',
     vendor: [
       'vue'
     ]
@@ -40,6 +41,7 @@ module.exports = webpackMerge(config, {
       debug: false,
       minimize: true
     }),
+    new ExtractTextPlugin('[name].[chunkhash].css'),
     new HtmlWebpackPlugin({
       template: './demo-app/index.html'
     })

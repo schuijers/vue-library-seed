@@ -1,12 +1,17 @@
 const path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 
 module.exports = {
   resolve: {
     extensions: [
       '.vue',
-      '.js'
+      '.js',
+      '.ts'
+    ],
+    plugins: [
+      new TsConfigPathsPlugin()
     ]
   },
   module: {
@@ -16,6 +21,7 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
+            js: 'awesome-typescript-loader',
             css: ExtractTextPlugin.extract({
               fallbackLoader: 'vue-style-loader',
               loader: 'css-loader?sourceMap'
@@ -24,9 +30,8 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
       },
       {
         test: /\.css$/,

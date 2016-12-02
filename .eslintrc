@@ -1,14 +1,13 @@
 {
   "env": {
     "es6": true,
-    "mocha": true
+    "node": true
   },
-  "extends": "vue",
+  "extends": [
+    "eslint:recommended"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module"
-  },
-  "rules": {
-    "semi": ["error", "always"]
   }
 }

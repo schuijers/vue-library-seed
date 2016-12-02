@@ -17,7 +17,7 @@ const webpackConfig = webpackMerge(commonConfig, {
   },
   devtool: 'inline-source-map',
   entry: {
-    app: './demo-app/app/index.js',
+    app: './demo-app/app/index.ts',
     vendor: [
       'vue'
     ]
@@ -47,9 +47,8 @@ const webpackConfig = webpackMerge(commonConfig, {
 
 webpackConfig.module.rules.push({
   enforce: 'pre',
-  test: /.js|.vue$/,
-  loader: 'eslint-loader',
-  exclude: /node_modules/
+  test: /\.ts$/,
+  loader: 'tslint-loader'
 });
 
 module.exports = webpackConfig;

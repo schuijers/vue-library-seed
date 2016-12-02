@@ -1,50 +1,36 @@
-const webpackConfig = require('./webpack.test');
-
-module.exports = function (config) {
+module.exports = (config) => {
   config.set({
-    autoWatch: true,
-    basePath: '',
     browsers: ['PhantomJS'],
     colors: true,
-    coverageReporter: {
-      dir: './reports/coverage',
-      reporters: [
-        {
-          type: 'html',
-          subdir: 'report-html'
-        },
-        {
-          type: 'lcov',
-          subdir: 'report-lcov'
-        },
-        {
-          type: 'cobertura',
-          subdir: '.',
-          file: 'cobertura.txt'
-        }
-      ]
-    },
-    files: [{
-      pattern: './config/karma-shim.js',
-      watched: false
-    }],
+    exclude: [
+      '**/*/index.ts'
+    ],
+    files: [
+
+      { pattern: 'src/**/*.ts' },      
+      { pattern: 'test/**/*.spec.ts' }
+    ],
     frameworks: [
       'mocha',
+      'karma-typescript',
       'chai'
     ],
+    karmaTypescriptConfig: {
+      tsconfig: './tsconfig.json',
+      reports: {
+        html: 'coverage',
+        'lcovonly': 'coverage'
+      }
+    },
     logLevel: config.LOG_INFO,
     port: 9876,
     preprocessors: {
-      './config/karma-shim.js': ['webpack']
+      '**/*.ts': ['karma-typescript']
     },
     reporters: [
       'mocha',
-      'coverage'
+      'karma-typescript'
     ],
-    singleRun: true,
-    webpack: webpackConfig,
-    webpackMiddleware: {
-      noInfo: true
-    }
+    singleRun: true
   });
 };

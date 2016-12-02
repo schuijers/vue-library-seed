@@ -1,13 +1,13 @@
-const config = require('./webpack.common.js');
+const commonConfig = require('./webpack.common.js');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = webpackMerge(config, {
+module.exports = webpackMerge(commonConfig, {
   bail: true,
   devtool: 'source-map',
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: 'vue-library-seed.js',
     pathinfo: false
