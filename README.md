@@ -8,12 +8,13 @@ Seed project for Vue 2.x component libraries.
 
 Built with:
 * Vue 2.x
-* ES6
+* TypeScript (and [Awesome Vue TS](https://github.com/HerringtonDarkholme/av-ts))
 * Webpack 2
 
 Linted with:
 * ESLint
 * Stylelint
+* TSLint
 
 Tested with:
 * Karma
