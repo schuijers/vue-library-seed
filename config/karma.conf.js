@@ -19,7 +19,7 @@ module.exports = (config) => {
       tsconfig: './tsconfig.json',
       reports: {
         html: 'coverage',
-        json: 'coverage'
+        lcovonly: 'coverage'
       }
     },
     logLevel: config.LOG_INFO,

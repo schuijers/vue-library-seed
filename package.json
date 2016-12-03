@@ -54,6 +54,7 @@
     "build:prod": "webpack --env.prod",
     "prebuild:prod": "npm-run-all clean lint test",
     "clean": "del dist/*",
+    "codecov": "bash <(curl -s https://codecov.io/bash) -f coverage/**/lcovonly",
     "lint": "npm-run-all --parallel lint:*",
     "lint:css": "stylelint **/*.css",
     "lint:js": "eslint .",
