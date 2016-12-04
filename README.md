@@ -1,6 +1,6 @@
 [![Build Status](https://semaphoreci.com/api/v1/schuijers/vue-library-seed/branches/typescript/shields_badge.svg)](https://semaphoreci.com/schuijers/vue-library-seed/branches/typescript)
 [![codecov](https://codecov.io/gh/schuijers/vue-library-seed/branch/typescript/graph/badge.svg)](https://codecov.io/gh/schuijers/vue-library-seed/branch/typescript)
-[![dependencies](https://david-dm.org/schuijers/vue-library-seed/typescriptsvg)](https://david-dm.org/schuijers/vue-library-seed/typescript)
+[![dependencies](https://david-dm.org/schuijers/vue-library-seed/typescript.svg)](https://david-dm.org/schuijers/vue-library-seed/typescript)
 [![devDependencies](https://david-dm.org/schuijers/vue-library-seed/typescript/dev-status.svg)](https://david-dm.org/schuijers/vue-library-seed/typescript?type=dev)
 
 # vue-library-seed
